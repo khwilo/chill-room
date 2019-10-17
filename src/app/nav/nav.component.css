@@ -1,0 +1,26 @@
+.nav {
+  background-color: #3c3c3c;
+  color: white;
+  display: flex;
+  padding: 1.5em;
+}
+
+.logo {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-right: 0.5em;
+}
+
+.searchForm {
+  margin-top: 0;
+  margin-left: auto;
+}
+
+.searchForm input[type='text'] {
+  padding: 0.5em;
+  border: none;
+  outline: 1rem;
+  text-transform: capitalize;
+  font-family: 'Fira Sans', sans-serif;
+}
