@@ -1,0 +1,15 @@
+<div class="movies">
+  <figure *ngFor="let movie of movies">
+    <img src="http://image.tmdb.org/t/p/w200/{{ movie?.poster_path }}" alt="" />
+    <figcaption>
+      <footer>
+        <section>
+          {{ movie?.release_date }}
+        </section>
+        <section class="rating">
+          <small>{{ movie?.vote_average }}</small>
+        </section>
+      </footer>
+    </figcaption>
+  </figure>
+</div>
