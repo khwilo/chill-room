@@ -1,0 +1,72 @@
+<div class="movie-detail">
+  <header [ngStyle]="setBackgroundImage()" class="header background-img">
+    <section class="info">
+      <p class="movie-title">{{ movie?.title }}</p>
+      <p class="movie-overview">{{ movie?.overview }}</p>
+      <div class="movie-genres">
+        <b>Genre:</b>
+        <span class="movie-genre">
+          <span *ngFor="let genre of movie?.genres"> {{ genre.name }} | </span>
+        </span>
+      </div>
+      <p class="movie-release-date">
+        <b>Release Date:</b><span class="date"> {{ movie?.release_date }}</span>
+      </p>
+      <footer class="movie-info-footer">
+        <span><b>Duration:</b> {{ movie?.runtime }} minutes</span>
+        <span class="movie-rating">
+          <b>Rating:</b>
+          <div class="vote-average-container">
+            <span class="vote-average">{{ movie?.vote_average }}</span>
+          </div>
+        </span>
+      </footer>
+    </section>
+    <section class="favorite">
+      <p>Favorite btn</p>
+    </section>
+  </header>
+
+  <main class="credits">
+    <section class="directors">
+      <div *ngFor="let worker of crew">
+        <div class="director-details" *ngIf="worker.job === 'Director'">
+          <img
+            src="http://image.tmdb.org/t/p/w185/{{ worker?.profile_path }}"
+            onError="this.src='assets/img/default-profile.png'"
+            alt="{{ worker?.name }} profile picture"
+          />
+          <div class="director-description">
+            <span>
+              <b>Name: </b><span class="director-name">{{ worker?.name }}</span>
+            </span>
+            <span class="director-role">
+              <b>Role: </b><span class="role">Director</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p class="cast-title">CAST</p>
+    <hr />
+
+    <section class="container grid-detail actors">
+      <figure *ngFor="let actor of cast">
+        <img
+          src="http://image.tmdb.org/t/p/w185/{{ actor?.profile_path }}"
+          onError="this.src='assets/img/default-profile.png'"
+          alt="{{ actor?.name }} profile picture"
+        />
+        <figcaption>
+          <footer>
+            <section>
+              {{ actor?.character }}
+            </section>
+            <section class="actor-name">{{ actor?.name }}</section>
+          </footer>
+        </figcaption>
+      </figure>
+    </section>
+  </main>
+</div>

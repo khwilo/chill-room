@@ -1,0 +1,14 @@
+.not-found {
+  background-color: #fff;
+  padding: 1.5em;
+  margin: 1.5em auto;
+  max-width: 80%;
+  color: #ffb700;
+  font-weight: bold;
+}
+
+.status-code {
+  font-size: 2em;
+  color: #000;
+  font-weight: 400;
+}

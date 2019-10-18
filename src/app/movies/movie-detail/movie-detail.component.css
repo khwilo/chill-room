@@ -1,0 +1,124 @@
+.movie-detail {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+header {
+  color: white;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0.5em;
+}
+
+.header .info {
+  background-color: #f1f0f448;
+  color: #000000;
+  border-radius: 0.5em;
+  padding: 0.5em;
+}
+
+.movie-title {
+  color: #000000;
+  display: inline-block;
+  padding: 0.5em;
+  background-color: #ffb700;
+  font-size: 1.2em;
+}
+
+.movie-overview {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.movie-genre {
+  background-color: crimson;
+  margin-left: 0.2em;
+  color: #fff;
+}
+
+.movie-release-date .date {
+  font-size: 1.2em;
+}
+
+.movie-info-footer {
+  display: flex;
+}
+
+.movie-info-footer .movie-rating {
+  margin-top: 0;
+}
+
+.movie-rating {
+  margin-left: auto;
+  display: flex;
+}
+
+.movie-rating .vote-average-container {
+  margin: 0 0 0.5em 0.5em;
+  padding: 0.5em;
+  background-color: #ffb700;
+  color: white;
+  transform: rotate(45deg);
+}
+
+.movie-detail .favorite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.credits {
+  margin-top: 0;
+  padding: 1.5em;
+}
+
+.directors {
+  display: inline-block;
+  padding: 1.5em;
+  margin: 1.5em auto;
+  background-color: #ffb700;
+  border-radius: 0.5em;
+}
+
+.director-details img {
+  border-radius: 50%;
+}
+
+.director-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.director-description .director-name,
+.director-role .role {
+  color: white;
+}
+
+.cast-title {
+  font-size: 1.8em;
+  background-color: #fff;
+  display: block;
+  max-width: 10%;
+  padding: 0.5em;
+  font-weight: bold;
+}
+
+.actors footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.actors .actor-name {
+  background-color: #ffb700;
+  padding: 0.5em;
+  margin-top: 0.5em;
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #fff;
+}

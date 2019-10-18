@@ -26,3 +26,35 @@ body * + * {
   max-width: 1080px;
   margin: 0 auto;
 }
+
+.grid-detail {
+  font-family: 'Fira Sans', sans-serif;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 1em;
+}
+
+.grid-detail figure:nth-child(1) {
+  margin-top: 1.5em;
+}
+
+.grid-detail figure {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-detail img {
+  flex: 1;
+  object-fit: fill;
+  max-width: 100%;
+}
+
+.grid-detail figure figcaption {
+  margin-top: 0;
+  padding: 0.5em;
+}
+
+.grid-detail footer * + * {
+  margin-top: 0;
+}

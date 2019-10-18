@@ -1,5 +1,5 @@
-<div class="movies">
-  <figure *ngFor="let movie of movies">
+<div class="grid-detail movies">
+  <figure *ngFor="let movie of movies" [routerLink]="['/movies', movie.id]">
     <img src="http://image.tmdb.org/t/p/w200/{{ movie?.poster_path }}" alt="" />
     <figcaption>
       <footer>
