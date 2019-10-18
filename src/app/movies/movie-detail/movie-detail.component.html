@@ -1,49 +1,57 @@
-<div>
-  <p><b>Adult:</b> {{ movie?.adult }}</p>
-  <img
-    src="http://image.tmdb.org/t/p/w500/{{ movie?.backdrop_path }}"
-    alt="backdrop path"
-  />
-  <p><b>Collection:</b> {{ movie?.belongs_to_collection }}</p>
-  <p><b>Budget:</b> {{ movie?.budget }}</p>
-  <span *ngFor="let genre of movie?.genres">
-    <b>Genre:</b> {{ genre.name }} <br />
-  </span>
-  <p><b>Title:</b> {{ movie?.title }}</p>
-  <p><b>Tagline:</b> {{ movie?.tagline }}</p>
-  <p><b>Overview:</b> {{ movie?.overview }}</p>
-  <img
-    src="http://image.tmdb.org/t/p/w200/{{ movie?.poster_path }}"
-    alt="poster path"
-  />
-  <p><b>Release Date:</b> {{ movie?.release_date }}</p>
-  <p><b>Duration:</b>{{ movie?.runtime }}</p>
-  <p><b>Language:</b>{{ movie?.spoken_languages?.name }}</p>
-  <p><b>Rating:</b> {{ movie?.vote_average }}</p>
-</div>
-<hr />
-<div>
-  <div *ngFor="let worker of crew">
-    <div *ngIf="worker.job === 'Director'">
-      <img
-        src="http://image.tmdb.org/t/p/w185/{{ worker?.profile_path }}"
-        alt="{{ worker?.name }} profile picture"
-      />
-      <span><b>Director: </b> {{ worker?.name }}</span>
-    </div>
-  </div>
-</div>
-<hr />
-<div>
-  <div *ngFor="let actor of cast">
+<div class="movie-detail">
+  <header>
+    <p><b>Adult:</b> {{ movie?.adult }}</p>
     <img
-      src="http://image.tmdb.org/t/p/w185/{{ actor?.profile_path }}"
-      onError="this.src='assets/img/default-profile.png'"
-      alt="{{ actor?.name }} profile picture"
+      src="http://image.tmdb.org/t/p/w500/{{ movie?.backdrop_path }}"
+      alt="backdrop path"
     />
-    <div>
-      <span><b>Character:</b> {{ actor?.character }}</span>
-      <span><b>Name:</b> {{ actor?.name }}</span>
-    </div>
-  </div>
+    <p><b>Collection:</b> {{ movie?.belongs_to_collection }}</p>
+    <p><b>Budget:</b> {{ movie?.budget }}</p>
+    <span *ngFor="let genre of movie?.genres">
+      <b>Genre:</b> {{ genre.name }} <br />
+    </span>
+    <p><b>Title:</b> {{ movie?.title }}</p>
+    <p><b>Tagline:</b> {{ movie?.tagline }}</p>
+    <p><b>Overview:</b> {{ movie?.overview }}</p>
+    <img
+      src="http://image.tmdb.org/t/p/w200/{{ movie?.poster_path }}"
+      alt="poster path"
+    />
+    <p><b>Release Date:</b> {{ movie?.release_date }}</p>
+    <p><b>Duration:</b>{{ movie?.runtime }}</p>
+    <p><b>Language:</b>{{ movie?.spoken_languages?.name }}</p>
+    <p><b>Rating:</b> {{ movie?.vote_average }}</p>
+  </header>
+
+  <main class="credits">
+    <section class="directors">
+      <div *ngFor="let worker of crew">
+        <div *ngIf="worker.job === 'Director'">
+          <img
+            src="http://image.tmdb.org/t/p/w185/{{ worker?.profile_path }}"
+            alt="{{ worker?.name }} profile picture"
+          />
+          <span><b>Director: </b> {{ worker?.name }}</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container grid-detail actors">
+      <figure *ngFor="let actor of cast">
+        <img
+          src="http://image.tmdb.org/t/p/w185/{{ actor?.profile_path }}"
+          onError="this.src='assets/img/default-profile.png'"
+          alt="{{ actor?.name }} profile picture"
+        />
+        <figcaption>
+          <footer>
+            <section>
+              {{ actor?.character }}
+            </section>
+            <section class="actor-name">{{ actor?.name }}</section>
+          </footer>
+        </figcaption>
+      </figure>
+    </section>
+  </main>
 </div>
