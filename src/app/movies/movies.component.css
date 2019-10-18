@@ -9,6 +9,7 @@
 .movies figure {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .movies figure:nth-child(1) {
