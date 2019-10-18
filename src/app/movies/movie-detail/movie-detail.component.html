@@ -21,3 +21,28 @@
   <p><b>Language:</b>{{ movie?.spoken_languages?.name }}</p>
   <p><b>Rating:</b> {{ movie?.vote_average }}</p>
 </div>
+<hr />
+<div>
+  <div *ngFor="let worker of crew">
+    <div *ngIf="worker.job === 'Director'">
+      <img
+        src="http://image.tmdb.org/t/p/w185/{{ worker?.profile_path }}"
+        alt="{{ worker?.name }} profile picture"
+      />
+      <span><b>Director: </b> {{ worker?.name }}</span>
+    </div>
+  </div>
+</div>
+<hr />
+<div>
+  <div *ngFor="let actor of cast">
+    <img
+      src="http://image.tmdb.org/t/p/w185/{{ actor?.profile_path }}"
+      alt="{{ actor?.name }} profile picture"
+    />
+    <div>
+      <span><b>Character:</b> {{ actor?.character }}</span>
+      <span><b>Name:</b> {{ actor?.name }}</span>
+    </div>
+  </div>
+</div>

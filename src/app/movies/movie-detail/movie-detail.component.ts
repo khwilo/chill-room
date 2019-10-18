@@ -10,6 +10,8 @@ import { MovieDataService } from '../services/movie-data.service';
 })
 export class MovieDetailComponent implements OnInit {
   movie: any;
+  cast: any;
+  crew: any;
 
   constructor(
     private movieDataService: MovieDataService,
@@ -19,9 +21,12 @@ export class MovieDetailComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       const movieID = +params.get('id');
-      this.movieDataService.getMovie(movieID).subscribe(foundMovie => {
-        console.log(foundMovie);
-        this.movie = foundMovie;
+      this.movieDataService.getMovie(movieID).subscribe(data => {
+        this.movie = data;
+      });
+      this.movieDataService.getCredits(movieID).subscribe(data => {
+        this.cast = data['cast'];
+        this.crew = data['crew'];
       });
     });
   }
