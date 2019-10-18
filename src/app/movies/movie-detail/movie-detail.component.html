@@ -30,15 +30,26 @@
   <main class="credits">
     <section class="directors">
       <div *ngFor="let worker of crew">
-        <div *ngIf="worker.job === 'Director'">
+        <div class="director-details" *ngIf="worker.job === 'Director'">
           <img
             src="http://image.tmdb.org/t/p/w185/{{ worker?.profile_path }}"
+            onError="this.src='assets/img/default-profile.png'"
             alt="{{ worker?.name }} profile picture"
           />
-          <span><b>Director: </b> {{ worker?.name }}</span>
+          <div class="director-description">
+            <span>
+              <b>Name: </b><span class="director-name">{{ worker?.name }}</span>
+            </span>
+            <span class="director-role">
+              <b>Role: </b><span class="role">Director</span>
+            </span>
+          </div>
         </div>
       </div>
     </section>
+
+    <p class="cast-title">CAST</p>
+    <hr />
 
     <section class="container grid-detail actors">
       <figure *ngFor="let actor of cast">

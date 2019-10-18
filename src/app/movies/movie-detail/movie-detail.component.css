@@ -72,6 +72,42 @@ header {
   align-items: center;
 }
 
+.credits {
+  margin-top: 0;
+  padding: 1.5em;
+}
+
+.directors {
+  display: inline-block;
+  padding: 1.5em;
+  margin: 1.5em auto;
+  background-color: #ffb700;
+  border-radius: 0.5em;
+}
+
+.director-details img {
+  border-radius: 50%;
+}
+
+.director-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.director-description .director-name,
+.director-role .role {
+  color: white;
+}
+
+.cast-title {
+  font-size: 1.8em;
+  background-color: #fff;
+  display: block;
+  max-width: 10%;
+  padding: 0.5em;
+  font-weight: bold;
+}
+
 .actors footer {
   display: flex;
   flex-direction: column;
