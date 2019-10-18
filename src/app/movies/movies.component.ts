@@ -13,7 +13,7 @@ export class MoviesComponent implements OnInit {
   constructor(private movieDataService: MovieDataService) {}
 
   ngOnInit() {
-    this.movieDataService.fetchAllMovies().subscribe((data: any[]) => {
+    this.movieDataService.getMovies().subscribe((data: any[]) => {
       console.log(data['results']);
       this.movies = data['results']; // use bracket notation because of type checking
     });

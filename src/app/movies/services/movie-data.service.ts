@@ -15,7 +15,7 @@ export class MovieDataService {
 
   constructor(private http: HttpClient) {}
 
-  fetchAllMovies() {
+  getMovies() {
     const popularMoviesUrl = `${this.BASE_URL}/popular?api_key=${this.API_KEY}&language=${this.LANGUAGE}&page=${this.page}`;
     return this.http.get(popularMoviesUrl).pipe(catchError(this.handleError));
   }
