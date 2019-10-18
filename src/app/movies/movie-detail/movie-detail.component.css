@@ -1,3 +1,23 @@
+.movie-detail {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+header {
+  color: white;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  max-width: 100%;
+}
+
+.movie-detail .favorite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .actors footer {
   display: flex;
   flex-direction: column;
