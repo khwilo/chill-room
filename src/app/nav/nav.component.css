@@ -12,6 +12,15 @@
   margin-right: 0.5em;
 }
 
+.logo a {
+  text-decoration: none;
+  color: white;
+}
+
+.logo a:hover {
+  color: #ffb700;
+}
+
 .searchForm {
   margin-top: 0;
   margin-left: auto;
