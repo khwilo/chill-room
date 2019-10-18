@@ -1,16 +1,26 @@
 <div class="movie-detail">
   <header [ngStyle]="setBackgroundImage()" class="header background-img">
     <section class="info">
-      <span *ngFor="let genre of movie?.genres">
-        <b>Genre:</b> {{ genre.name }} <br />
-      </span>
-      <p><b>Title:</b> {{ movie?.title }}</p>
-      <p><b>Tagline:</b> {{ movie?.tagline }}</p>
-      <p><b>Overview:</b> {{ movie?.overview }}</p>
-      <p><b>Release Date:</b> {{ movie?.release_date }}</p>
-      <p><b>Duration:</b>{{ movie?.runtime }}</p>
-      <p><b>Language:</b>{{ movie?.spoken_languages?.name }}</p>
-      <p><b>Rating:</b> {{ movie?.vote_average }}</p>
+      <p class="movie-title">{{ movie?.title }}</p>
+      <p class="movie-overview">{{ movie?.overview }}</p>
+      <div class="movie-genres">
+        <b>Genre:</b>
+        <span class="movie-genre">
+          <span *ngFor="let genre of movie?.genres"> {{ genre.name }} | </span>
+        </span>
+      </div>
+      <p class="movie-release-date">
+        <b>Release Date:</b><span class="date"> {{ movie?.release_date }}</span>
+      </p>
+      <footer class="movie-info-footer">
+        <span><b>Duration:</b> {{ movie?.runtime }} minutes</span>
+        <span class="movie-rating">
+          <b>Rating:</b>
+          <div class="vote-average-container">
+            <span class="vote-average">{{ movie?.vote_average }}</span>
+          </div>
+        </span>
+      </footer>
     </section>
     <section class="favorite">
       <p>Favorite btn</p>
