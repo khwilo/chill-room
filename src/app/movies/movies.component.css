@@ -1,36 +1,18 @@
 .movies figure {
-  display: flex;
-  flex-direction: column;
   cursor: pointer;
 }
 
-.movies figure:nth-child(1) {
-  margin-top: 1.5em;
-}
-
-.movies img {
-  flex: 1;
-  object-fit: fill;
-  max-width: 100%;
-}
-
 .movies figure figcaption {
-  margin-top: 0;
   background-color: #ffb700;
-  padding: 0.5em;
   color: #fff;
   font-weight: bold;
 }
 
-footer {
+.grid-detail footer {
   display: flex;
 }
 
-footer * + * {
-  margin-top: 0;
-}
-
-footer .rating {
+.grid-detail footer .rating {
   color: #000000;
   margin-left: auto;
 }

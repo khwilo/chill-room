@@ -34,3 +34,27 @@ body * + * {
   grid-auto-rows: 1fr;
   gap: 1em;
 }
+
+.grid-detail figure:nth-child(1) {
+  margin-top: 1.5em;
+}
+
+.grid-detail figure {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-detail img {
+  flex: 1;
+  object-fit: fill;
+  max-width: 100%;
+}
+
+.grid-detail figure figcaption {
+  margin-top: 0;
+  padding: 0.5em;
+}
+
+.grid-detail footer * + * {
+  margin-top: 0;
+}
