@@ -6,6 +6,8 @@
     <form>
       <input
         type="text"
+        [(ngModel)]="movieTitle"
+        (keyup)="updateSearchValue(movieTitle)"
         name="search"
         id="search"
         placeholder="{{ movieSearch }}"
