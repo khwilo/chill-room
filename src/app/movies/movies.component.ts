@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Movie } from './movie';
 import { MovieDataService } from './services/movie-data.service';
+import { MovieListFilterService } from './services/movie-list-filter.service';
+import { MovieSearchService } from '../shared/movie-search.service';
 
 @Component({
   selector: 'app-movies',
@@ -10,12 +12,37 @@ import { MovieDataService } from './services/movie-data.service';
 })
 export class MoviesComponent implements OnInit {
   movies: Movie[];
-  constructor(private movieDataService: MovieDataService) {}
+  _movieListFilter: string;
+  filteredMovies: Movie[];
+
+  constructor(
+    private movieDataService: MovieDataService,
+    private movieListFilterService: MovieListFilterService,
+    private movieSearchService: MovieSearchService
+  ) {}
+
+  get movieListFilter(): string {
+    return this._movieListFilter;
+  }
+
+  set movieListFilter(searchTerm: string) {
+    this._movieListFilter = searchTerm;
+    this.filteredMovies = this.movieListFilter
+      ? this.movieListFilterService.searchByTitle(
+          this.movieListFilter,
+          this.movies
+        )
+      : this.movies;
+  }
 
   ngOnInit() {
     this.movieDataService.getMovies().subscribe((data: any[]) => {
       console.log(data['results']);
       this.movies = data['results']; // use bracket notation because of type checking
+      this.filteredMovies = this.movies;
     });
+    this.movieSearchService.currentSearchTerm.subscribe(
+      value => (this.movieListFilter = value)
+    );
   }
 }
