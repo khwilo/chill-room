@@ -16,7 +16,6 @@ export class MovieDetailComponent implements OnInit {
   crew: any;
   BASE_IMAGE_URL = 'http://image.tmdb.org/t/p/w1280/';
   backdropPath: string;
-  favorite = false;
 
   constructor(
     private movieDataService: MovieDataService,
@@ -50,6 +49,9 @@ export class MovieDetailComponent implements OnInit {
 
   addToFavorites(movie: Movie) {
     this.movieStorageService.addMovieToFavorites(movie);
-    this.favorite = !this.favorite;
+  }
+
+  removeFromFavorites(movie: Movie) {
+    this.movieStorageService.removeMovieFromFavorites(movie);
   }
 }

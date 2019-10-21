@@ -74,19 +74,19 @@ header {
   align-items: center;
 }
 
-.movie-detail .favorite-icon {
-  color: white;
+.movie-detail .favorite-plus-icon {
+  background-color: green;
+  padding: 0.2em;
 }
 
-.movie-detail .favorite p {
-  color: #ffb700;
+.movie-detail .favorite-minus-icon {
+  margin-left: 0.5em;
+  background-color: red;
+  padding: 0.2em;
 }
 
-.movie-detail .favorite .add {
-  color: red;
-}
-
-.movie-detail .favorite-icon:hover {
+.favorite-plus-icon:hover,
+.favorite-minus-icon:hover {
   cursor: pointer;
 }
 

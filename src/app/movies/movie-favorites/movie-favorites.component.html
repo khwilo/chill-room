@@ -1,4 +1,6 @@
-<div *ngIf="favoriteMovies === null">
+<div
+  *ngIf="favoriteMovies === null || !(favoriteMovies && favoriteMovies.length)"
+>
   <div class="container not-found">
     <p>
       {{ message }}

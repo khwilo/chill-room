@@ -23,4 +23,12 @@ export class MovieStorageService {
     favoritesList.push(movie);
     this.storage.set(STORAGE_KEY, favoritesList);
   }
+
+  removeMovieFromFavorites(movie: Movie) {
+    const favoritesList = this.storage.get(STORAGE_KEY);
+    const filteredList = favoritesList.filter(
+      favoriteMovie => favoriteMovie.id !== movie.id
+    );
+    this.storage.set(STORAGE_KEY, filteredList);
+  }
 }
