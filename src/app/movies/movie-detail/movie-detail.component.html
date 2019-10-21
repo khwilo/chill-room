@@ -23,7 +23,20 @@
       </footer>
     </section>
     <section class="favorite">
-      <p>Favorite btn</p>
+      <div class="favorite-icons">
+        <span (click)="addToFavorites(movie)">
+          <i
+            class="fa fa-plus fa-2x favorite-plus-icon"
+            title="Add to favorites"
+          ></i>
+        </span>
+        <span (click)="removeFromFavorites(movie)">
+          <i
+            class="fa fa-minus fa-2x favorite-minus-icon"
+            title="Remove from favorites"
+          ></i>
+        </span>
+      </div>
     </section>
   </header>
 

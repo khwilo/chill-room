@@ -1,3 +1,5 @@
+@import '../../../../node_modules/font-awesome/css/font-awesome.css';
+
 .movie-detail {
   display: flex;
   flex-direction: column;
@@ -70,6 +72,22 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.movie-detail .favorite-plus-icon {
+  background-color: green;
+  padding: 0.2em;
+}
+
+.movie-detail .favorite-minus-icon {
+  margin-left: 0.5em;
+  background-color: red;
+  padding: 0.2em;
+}
+
+.favorite-plus-icon:hover,
+.favorite-minus-icon:hover {
+  cursor: pointer;
 }
 
 .credits {

@@ -1,0 +1,27 @@
+<div
+  *ngIf="favoriteMovies === null || !(favoriteMovies && favoriteMovies.length)"
+>
+  <div class="container not-found">
+    <p>
+      {{ message }}
+    </p>
+  </div>
+</div>
+<div class="grid-detail movies">
+  <figure
+    *ngFor="let movie of favoriteMovies"
+    [routerLink]="['/movies', movie.id]"
+  >
+    <img src="http://image.tmdb.org/t/p/w200/{{ movie?.poster_path }}" alt="" />
+    <figcaption>
+      <footer>
+        <section>
+          {{ movie?.release_date }}
+        </section>
+        <section class="rating">
+          <small>{{ movie?.vote_average }}</small>
+        </section>
+      </footer>
+    </figcaption>
+  </figure>
+</div>

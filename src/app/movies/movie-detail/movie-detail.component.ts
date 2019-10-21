@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { Movie } from '../movie';
 import { MovieDataService } from '../services/movie-data.service';
+import { MovieStorageService } from '../services/movie-storage.service';
 
 @Component({
   selector: 'app-movie-detail',
@@ -17,7 +19,8 @@ export class MovieDetailComponent implements OnInit {
 
   constructor(
     private movieDataService: MovieDataService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private movieStorageService: MovieStorageService
   ) {}
 
   ngOnInit() {
@@ -42,5 +45,13 @@ export class MovieDetailComponent implements OnInit {
       'background-repeat': 'no-repeat'
     };
     return styles;
+  }
+
+  addToFavorites(movie: Movie) {
+    this.movieStorageService.addMovieToFavorites(movie);
+  }
+
+  removeFromFavorites(movie: Movie) {
+    this.movieStorageService.removeMovieFromFavorites(movie);
   }
 }

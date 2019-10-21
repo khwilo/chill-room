@@ -1,7 +1,12 @@
 <nav class="nav">
-  <header class="logo">
-    <a href="" routerLink="/movies">{{ logo }}</a>
+  <header>
+    <div class="logo">
+      <a routerLink="/movies">{{ logo }}</a>
+    </div>
   </header>
+  <nav class="navigation-menu">
+    <a routerLink="/movies/favorites">Favorites</a>
+  </nav>
   <div class="searchForm">
     <form>
       <input
