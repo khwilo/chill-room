@@ -37,7 +37,6 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit() {
     this.movieDataService.getMovies().subscribe((data: any[]) => {
-      console.log(data['results']);
       this.movies = data['results']; // use bracket notation because of type checking
       this.filteredMovies = this.movies;
     });

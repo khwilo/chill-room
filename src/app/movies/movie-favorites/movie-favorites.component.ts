@@ -15,6 +15,5 @@ export class MovieFavoritesComponent implements OnInit {
 
   ngOnInit() {
     this.favoriteMovies = JSON.parse(sessionStorage.getItem('movie-favorites'));
-    console.log(this.favoriteMovies);
   }
 }
