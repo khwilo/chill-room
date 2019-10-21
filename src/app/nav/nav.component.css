@@ -21,6 +21,28 @@
   color: #ffb700;
 }
 
+.navigation-menu a {
+  text-decoration: none;
+  color: #ffb700;
+  background-color: #fff;
+  padding: 0.5em;
+}
+
+.navigation-menu a:hover {
+  color: #fff;
+  background-color: #ffb700;
+}
+
+.navigation-menu {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navigation-menu a {
+  cursor: pointer;
+}
+
 .searchForm {
   margin-top: 0;
   margin-left: auto;
