@@ -23,7 +23,13 @@
       </footer>
     </section>
     <section class="favorite">
-      <button (click)="addToFavorites(movie)">Add to favorites</button>
+      <span (click)="addToFavorites(movie)">
+        <i
+          class="fa fa-heart fa-4x favorite-icon"
+          title="Add to favorites"
+          [ngClass]="favorite ? 'add' : 'remove'"
+        ></i>
+      </span>
     </section>
   </header>
 
