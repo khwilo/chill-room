@@ -25,16 +25,18 @@
     <section class="favorite">
       <div class="favorite-icons">
         <span (click)="addToFavorites(movie)">
-          <i
-            class="fa fa-plus fa-2x favorite-plus-icon"
+          <fa-icon
+            [icon]="addIcon"
+            class="favorite-plus-icon fa-2x"
             title="Add to favorites"
-          ></i>
+          ></fa-icon>
         </span>
         <span (click)="removeFromFavorites(movie)">
-          <i
-            class="fa fa-minus fa-2x favorite-minus-icon"
+          <fa-icon
+            [icon]="removeIcon"
+            class="fa-2x favorite-minus-icon"
             title="Remove from favorites"
-          ></i>
+          ></fa-icon>
         </span>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
 import { Movie } from '../movie';
 import { MovieDataService } from '../services/movie-data.service';
@@ -16,6 +17,9 @@ export class MovieDetailComponent implements OnInit {
   crew: any;
   BASE_IMAGE_URL = 'http://image.tmdb.org/t/p/w1280/';
   backdropPath: string;
+
+  addIcon = faPlus;
+  removeIcon = faMinus;
 
   constructor(
     private movieDataService: MovieDataService,
