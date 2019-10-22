@@ -1,0 +1,3 @@
+# Rewrite all requests to any file that doesn’t already exist to the index page, where router can handle it.
+
+/* /index.html 200
