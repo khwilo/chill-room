@@ -1,6 +1,8 @@
 # ChillRoom
 
-Movie info description service.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/dd4cfeb0-76d5-49c2-901a-3e0fb93af45b/deploy-status)](https://app.netlify.com/sites/chill-room/deploys)
+
+Movie info description service. Visit the link `https://chill-room.netlify.com/movies` on your web browser to view the web app.
 
 :warning: :construction: __WORK IN PROGRESS__
 
