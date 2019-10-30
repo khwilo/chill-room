@@ -1,7 +1,9 @@
 <nav class="nav">
   <header>
     <div class="logo">
-      <a routerLink="/movies">{{ logo }}</a>
+      <a routerLink="/movies" [queryParams]="{ filterBy: movieTitle }">
+        {{ logo }}
+      </a>
     </div>
   </header>
   <nav class="navigation-menu">

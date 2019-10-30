@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { MovieSearchService } from '../shared/movie-search.service';
 
@@ -12,9 +13,13 @@ export class NavComponent implements OnInit {
   movieSearch = 'search movie title';
   movieTitle: string;
 
-  constructor(private movieSearchService: MovieSearchService) {}
+  constructor(
+    private movieSearchService: MovieSearchService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
+    this.movieTitle = this.route.snapshot.queryParamMap.get('filterBy') || '';
     this.movieSearchService.currentSearchTerm.subscribe(
       value => (this.movieTitle = value)
     );
