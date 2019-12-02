@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { MovieSearchService } from '../shared/movie-search.service';
+import { MovieListFilterService } from '../movies/services/movie-list-filter.service';
 
 @Component({
   selector: 'app-nav',
@@ -11,21 +12,36 @@ import { MovieSearchService } from '../shared/movie-search.service';
 export class NavComponent implements OnInit {
   @Input() logo: string;
   movieSearch = 'search movie title';
-  movieTitle: string;
+  movies: any;
+
+  private _movieTitle: string;
+
+  get movieTitle(): string {
+    return this._movieTitle;
+  }
+
+  set movieTitle(value: string) {
+    this._movieTitle = value;
+    this.movieSearchService.updateFilteredMovieList(
+      this.filterMovieList(this.movieTitle, this.movies)
+    );
+  }
 
   constructor(
+    private movieListFilterService: MovieListFilterService,
     private movieSearchService: MovieSearchService,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    this.movieTitle = this.route.snapshot.queryParamMap.get('filterBy') || '';
-    this.movieSearchService.currentSearchTerm.subscribe(
-      value => (this.movieTitle = value)
+    this.movieSearchService.currentMovies$.subscribe(
+      data => (this.movies = data)
     );
   }
 
-  updateSearchValue() {
-    this.movieSearchService.updateSearchTerm(this.movieTitle);
+  filterMovieList(searchTerm, movieList) {
+    return searchTerm
+      ? this.movieListFilterService.searchByTitle(searchTerm, movieList)
+      : movieList;
   }
 }

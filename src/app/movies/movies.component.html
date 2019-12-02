@@ -1,4 +1,7 @@
-<div class="grid-detail movies">
+<div
+  class="grid-detail movies"
+  *ngIf="filteredMovies$ | async as filteredMovies"
+>
   <figure
     *ngFor="let movie of filteredMovies"
     [routerLink]="['/movies', movie.id]"

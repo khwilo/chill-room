@@ -1,7 +1,7 @@
 <nav class="nav">
   <header>
     <div class="logo">
-      <a routerLink="/movies" [queryParams]="{ filterBy: movieTitle }">
+      <a routerLink="/movies">
         {{ logo }}
       </a>
     </div>
@@ -14,7 +14,6 @@
       <input
         type="text"
         [(ngModel)]="movieTitle"
-        (keyup)="updateSearchValue()"
         name="search"
         id="search"
         placeholder="{{ movieSearch }}"
