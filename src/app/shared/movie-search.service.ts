@@ -6,12 +6,19 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class MovieSearchService {
-  private inputValueSource = new BehaviorSubject<string>('');
-  currentSearchTerm = this.inputValueSource.asObservable();
+  private currentMoviesSource = new BehaviorSubject<any[]>([]);
+  currentMovies$ = this.currentMoviesSource.asObservable();
+
+  private filteredMoviesSource = new BehaviorSubject<any[]>([]);
+  filteredMovies$ = this.filteredMoviesSource.asObservable();
 
   constructor() {}
 
-  updateSearchTerm(value: string) {
-    this.inputValueSource.next(value);
+  updateCurrentMovieList(value) {
+    this.currentMoviesSource.next(value);
+  }
+
+  updateFilteredMovieList(value) {
+    this.filteredMoviesSource.next(value);
   }
 }

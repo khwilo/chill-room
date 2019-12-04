@@ -1,7 +1,9 @@
 <nav class="nav">
   <header>
     <div class="logo">
-      <a routerLink="/movies">{{ logo }}</a>
+      <a routerLink="/movies">
+        {{ logo }}
+      </a>
     </div>
   </header>
   <nav class="navigation-menu">
@@ -12,7 +14,6 @@
       <input
         type="text"
         [(ngModel)]="movieTitle"
-        (keyup)="updateSearchValue()"
         name="search"
         id="search"
         placeholder="{{ movieSearch }}"
