@@ -23,6 +23,7 @@ export class MoviesComponent implements OnInit {
     this.movieDataService.getMovies().subscribe((data: any[]) => {
       this.movies = data['results']; // use bracket notation because of type checking
       this.movieSearchService.updateCurrentMovieList(this.movies);
+      this.movieSearchService.updateFilteredMovieList(this.movies);
     });
   }
 }
